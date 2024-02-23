@@ -1,0 +1,24 @@
+Mail
+apt install postfix dovecot-imapd dovecot-pop3d -y
+maildirmake.dovecot /etc/skel/Maildir
+nano /etc/postfix/main.cf Pada baris dibawah tambahkan code home_mailbox = Maildir/
+Lakukan perubahan pada file 10-mail.conf dengan mengetikkan perintah nano /etc/dovecot/conf.d/10-mail.conf
+Lakukan perubahan pada file 10-auth.conf dengan mengetikkan perintah nano /etc/dovecot/conf.d/10-auth.conf
+Lakukan perubahan pada file dovecot.conf dengan mengetikkan perintah nano /etc/dovecot/dovecot.conf
+dpkg-reconfigure postfix
+adduser
+1)	Restart Postfix -> /etc/init.d/postfix restart
+2)	Restart Dovecot -> /etc/init.d/dovecot restart
+3)	Restart Bind9 -> /etc/init.d/bind9 restart
+apt install telnet -y
+telnet ... 25
+mail from: huda (enter)  sebagai pengirim email
+rcpt to: samhud (enter)  sebagai penerima email
+data (enter)  perintah memasukkan pesan
+Isikan pesan yang ingin di sampaikan
+. (enter)  perintah untuk mengakhiri pesan
+quit (enter)  perintah untuk keluar
+
+
+
+
