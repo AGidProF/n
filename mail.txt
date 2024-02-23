@@ -22,3 +22,27 @@ quit (enter)  perintah untuk keluar
 
 
 
+NTP
+restrict 192.168.123.0 mask 255.255.255.0 nomodify notrap.
+ntpq -p
+
+CACTI
+
+apt update && sudo apt upgrade
+apt install -y mariadb-server
+apt install -y cacti
+
+
+
+Ca
+mkdir CA
+cp /etc/ssl/openssl.cnf /home/CA
+nano /home/CA/openssl.cnf (match > optional)
+country name
+cd /home/CA
+openssl req -x509 -new -nodes -out ca.crt -keyout ca.key
+openssl req -new -nodes -days 365 -out www/www.csr -keyout www/www.key
+
+OpenVPN
+wget https://raw.githubusercontent.com/Angristan/openvpn-install/master/openvpn-install.sh -O debian10-vpn.sh
+chmod +x debian10-vpn.sh
